@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="Page style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Welcome screen  -->
+        <div class="screen" id="welcome-screen">
+            <h1>Quiz Game</h1>
+            <div class="player-form">
+                <h2> Add players (1-4)</h2>
+                <div class="input-group">
+                    <input type="text" id="playerNameInput">
+                    <button id="addPlayerBtn" class="btn btn-primary">Add</button>
+                </div>
+                <div class="players-list" id="playersList"></div>
+                <div class="error-message" id="errorMessage"></div>
+                <button id="startGameBtn" class="btn btn-success" disabled>
+                    Start Game
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz selection screen -->
+        <div class="screen" id="quiz-selection-screen">
+            <h1> Quiz type</h1>
+            <div class="quiz-types">
+                <button class="btn quiz-type-btn" data-type="html">HTML</button>
+                <button class="btn quiz-type-btn" data-type="css">CSS</button>
+                <button class="btn quiz-type-btn" data-type="javascript">JavaScript</button>
+                <button class="btn quiz-type-btn" data-type="mixed">Mixte</button>
+            </div>
+            <div class="difficulty-section">
+                <h3>Difficulty level</h3>
+                <div class="difficulty-buttons">
+                    <button class="btn difficulty-btn" data-questions="3">Easy (3 questions)</button>
+                    <button class="btn difficulty-btn" data-questions="4">Medium (4 questions)</button>
+                    <button class="btn difficulty-btn" data-questions="5">Hard (5 questions)</button>
+                </div>
+            </div>
+            <div class="navigation-buttons">
+                <button id="prevBtn" class="btn btn-secondary">Previous</button>
+                <button id="nextBtn" class="btn btn-primary" disabled>Next</button>
+            </div>
+        </div>
+    
+        <!-- Game screen -->
+         <!-- New game screen --> 
+        <div class="screen" id="game-screen"> 
+        <!-- Game header -->
+            <div class="game-header"> 
+                <div id="current-player" class="player-info"> Au tour de 
+                    <span class="player-name"></span> 
+                </div>
+                <div id="timer" class="timer">30</div>
+            </div> 
+            <!-- Body of the game --> 
+             <div class="question-container"> 
+                <h2 id="question-text" class="question-title"></h2> 
+                <div class="answer-buttons"> 
+                    <button class="btn answer-btn" data-index="0"></button> 
+                    <button class="btn answer-btn" data-index="1"></button> 
+                    <button class="btn answer-btn" data-index="2"></button> 
+                    <button class="btn answer-btn" data-index="3"></button> 
+                </div> 
+                <button id="submit-btn" class="btn btn-primary" disabled> Valider </button>
+             </div> 
+             <!-- Score -->
+                <div class="score-display"> Score: 
+                    <span id="current-score">0</span>
+                </div> 
+            </div>
+    </div>
+    <script src="Game detail.js"></script>
+</body>
+</html>
+
+
+
